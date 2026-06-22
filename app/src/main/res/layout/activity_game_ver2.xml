@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="landscape">
+
+    <!-- AR-камера или фон -->
+    <com.google.ar.sceneform.ArSceneView
+        android:id="@+id/arSceneView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Полупрозрачный слой для подводного эффекта (скрыт по умолчанию) -->
+    <View
+        android:id="@+id/waterOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4000BFFF"
+        android:visibility="gone" />
+
+    <!-- Белый слой для ослепления (скрыт по умолчанию) -->
+    <View
+        android:id="@+id/blindOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFFFF"
+        android:visibility="gone" />
+
+    <!-- ИНДИКАТОРЫ МЕСТОПОЛОЖЕНИЯ ДРОНОВ -->
+    
+    <!-- Индикатор дронов справа -->
+    <View
+        android:id="@+id/droneIndicatorRight"
+        android:layout_width="8dp"
+        android:layout_height="120dp"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="4dp"
+        android:background="#FF0000"
+        android:visibility="gone"
+        android:alpha="0.8" />
+    
+    <!-- Индикатор дронов слева -->
+    <View
+        android:id="@+id/droneIndicatorLeft"
+        android:layout_width="8dp"
+        android:layout_height="120dp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="4dp"
+        android:background="#FF0000"
+        android:visibility="gone"
+        android:alpha="0.8" />
+    
+    <!-- Индикатор дронов сверху -->
+    <View
+        android:id="@+id/droneIndicatorTop"
+        android:layout_width="120dp"
+        android:layout_height="8dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="4dp"
+        android:background="#FF0000"
+        android:visibility="gone"
+        android:alpha="0.8" />
+    
+    <!-- Индикатор дронов снизу -->
+    <View
+        android:id="@+id/droneIndicatorBottom"
+        android:layout_width="120dp"
+        android:layout_height="8dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:background="#FF0000"
+        android:visibility="gone"
+        android:alpha="0.8" />
+
+    <!-- СВОИ ХАРАКТЕРИСТИКИ: слева вверху -->
+    <LinearLayout
+        android:id="@+id/playerStatsPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#40000000"
+        android:padding="8dp"
+        android:layout_gravity="end|top"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp">
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_player_stats" android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/playerCredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_credits_format"
+            android:textColor="#0DFA50"
+            android:textSize="13sp" />
+        <TextView android:id="@+id/playerHealth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_health_format" android:textColor="#FF6B6B" android:textSize="13sp" />
+        <TextView android:id="@+id/playerArmor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_armor_format" android:textColor="#4ECDC4" android:textSize="13sp" />
+        <TextView android:id="@+id/playerDamage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_damage_format" android:textColor="#FFE66D" android:textSize="13sp" />
+        <TextView android:id="@+id/playerTurrets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_turrets_format" android:textColor="#FFA000" android:textSize="18sp" android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- КНОПКА ПАУЗЫ: слева вверху под характеристиками -->
+
+    <!-- ВОЛНЫ и ТАЙМЕР: по центру вверху -->
+    <Button
+        android:id="@+id/pauseButton"
+        android:layout_width="62dp"
+        android:layout_height="48dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginStart="50dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FF9800"
+        android:text="||"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/wavePanel"
+        android:layout_marginVertical="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#40000000"
+        android:padding="8dp"
+        android:layout_marginStart="-40dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="12dp">
+        <TextView android:id="@+id/waveCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_wave_format" android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+        <TextView android:id="@+id/waveTimer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_wave_timer_format" android:textColor="#00FF00" android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- ХАРАКТЕРИСТИКИ ВРАГА: справа вверху -->
+
+    <!-- ЭКОНОМИКА: кредиты/золото/энергия (справа вверху) -->
+    <LinearLayout
+        android:id="@+id/enemyStatsPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
+        android:background="#40000000"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_enemy_stats"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/enemyHealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_enemy_health_format"
+            android:textColor="#FF6B6B"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/enemyArmor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_enemy_armor_format"
+            android:textColor="#4ECDC4"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/enemyDamage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_enemy_damage_format"
+            android:textColor="#FFE66D"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/enemyDrones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_enemy_drones_format"
+            android:textColor="#FFA000"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <!-- ВЫБОР ТУРЕЛЕЙ: слева внизу -->
+    <LinearLayout
+        android:id="@+id/turretSelectPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#40000000"
+        android:padding="8dp"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp">
+        <Spinner
+            android:id="@+id/turretSpinner"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#FFFFFF"
+            android:popupBackground="#FFFFFF"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/launchTurretButton"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="#548BC8"
+            android:text="@string/game_turret_sonar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- ВЫБОР ОРУЖИЯ: справа внизу -->
+    <LinearLayout
+        android:id="@+id/weaponSelectPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#40000000"
+        android:padding="8dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp">
+
+        <Spinner
+            android:id="@+id/weaponSpinner"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#FFFFFF"
+            android:popupBackground="#FFFFFF"
+            android:textColor="#000000" />
+        <Button
+            android:id="@+id/fireButton"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#4CAF50"
+            android:text="@string/game_fire"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- ПРИЦЕЛ с круговым ProgressBar по центру -->
+    <FrameLayout
+        android:id="@+id/crosshairContainer"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center">
+        <ImageView
+            android:id="@+id/crosshair"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/crosshair"
+            android:alpha="0.7" />
+    </FrameLayout>
+
+    <!-- КНОПКИ ДВИЖЕНИЯ ДЛЯ ViewModelShip2: внизу по центру -->
+    <LinearLayout
+        android:id="@+id/movementButtonsPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="90dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/moveLeftButton"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#FF5722"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/moveRightButton"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#FF5722"
+            android:text="→"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ИНДИКАТОР ЭВАКУАЦИИ: зелёный progress bar и текст сверху -->
+    <FrameLayout
+        android:id="@+id/adBannerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|clip_horizontal|center|clip_vertical"
+        android:minHeight="50dp" />
+
+    <LinearLayout
+        android:id="@+id/evacuationPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:background="#22000000"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/evacuationProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_evacuation_format"
+            android:textColor="#00FF00"
+            android:textSize="14sp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="0dp"
+            android:paddingBottom="2dp"
+            />
+    </LinearLayout>
+</FrameLayout> 

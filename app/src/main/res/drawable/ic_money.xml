@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Монета (большой круг) -->
+    <path android:fillColor="#FFD700" android:pathData="M12,4a8,8 0 1,0 0,16a8,8 0 1,0 0,-16z"/>
+    <!-- Блик (маленький круг) -->
+    <path android:fillColor="#FFF9C4" android:pathData="M15,8a2,2 0 1,0 0,4a2,2 0 1,0 0,-4z"/>
+    <!-- Вертикальная черта (деталь) -->
+    <path android:strokeColor="#BFA100" android:strokeWidth="1.2" android:fillColor="@android:color/transparent" android:pathData="M12,8v8"/>
+</vector> 

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Дронобой Демо</string>
+
+    <!-- Главное меню -->
+    <string name="main_game_title">Дронобой AR</string>
+    <string name="main_version">демо-версия</string>
+    <string name="main_play">Играть</string>
+    <string name="main_exit">Выйти</string>
+
+    <!-- Оружие -->
+    <string name="weapon_pistol">Пистолет</string>
+    <string name="weapon_turret">Турель</string>
+    <string name="weapon_sonar">Сонар</string>
+
+    <!-- HUD игрока -->
+    <string name="game_player_stats">Ваши параметры:</string>
+    <string name="game_health_format">Жизни: %d</string>
+    <string name="game_armor_format">Броня: %d</string>
+    <string name="game_damage_format">Урон: %d</string>
+    <string name="game_turrets_format">Турели: %d</string>
+    <string name="game_credits_format">Деньги: %d</string>
+    <string name="game_health_dynamic_format" formatted="false">Жизни: %1$d/%2$d</string>
+    <string name="game_money_dynamic_format">Деньги: %d</string>
+    <string name="game_armor_dynamic_format">Броня: %d</string>
+    <string name="game_damage_dynamic_format">Урон: %d</string>
+    <string name="game_turrets_dynamic_format">Турели: %d</string>
+
+    <!-- HUD врага -->
+    <string name="game_enemy_stats">Параметры врага:</string>
+    <string name="game_drones_hp_format">HP дронов: %d</string>
+    <string name="game_drones_armor_format">Броня дронов: %d</string>
+    <string name="game_drones_damage_format">Урон дронов: %d</string>
+    <string name="game_enemy_health_format">Жизни: %d</string>
+    <string name="game_enemy_armor_format">Броня: %d</string>
+    <string name="game_enemy_damage_format">Урон: %d</string>
+    <string name="game_enemy_drones_format">Дронов живо: %d</string>
+
+    <!-- Волны -->
+    <string name="game_wave_format">Волна: %d</string>
+    <string name="game_wave_timer_format">До волны: %s</string>
+    <string name="game_time_format">Время: %s</string>
+    <string name="game_evacuation_format">До эвакуации: %d сек</string>
+
+    <!-- Турели/сонар -->
+    <string name="game_turret_sonar">Турель\nСонар</string>
+    <string name="game_fire">Огонь</string>
+    <string name="game_no_turrets">Нет доступных турелей</string>
+    <string name="game_no_sonars">Нет доступных сонаров</string>
+    <string name="game_sonar_level_only">Сонар доступен только на этом уровне!</string>
+
+    <!-- Диалоги -->
+    <string name="dialog_pause">Пауза</string>
+    <string name="dialog_continue">Продолжить</string>
+    <string name="dialog_menu">В меню</string>
+    <string name="dialog_win">Победа!</string>
+    <string name="dialog_lose">Поражение</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_rewards_format">+ %d кредитов</string>
+    <string name="dialog_stats_format" formatted="false">Время: %1$s | Дронов уничтожено: %2$d</string>
+    <string name="dialog_cutscene_title_placeholder">Название уровня</string>
+    <string name="dialog_cutscene_description_placeholder">Описание миссии</string>
+
+    <!-- Уведомления -->
+    <string name="notification_text_placeholder">Текст уведомления</string>
+    <string name="notification_wave_start_format">Волна %d началась!</string>
+    <string name="notification_level_win">Победа!</string>
+    <string name="notification_level_lose">Поражение!</string>
+    <string name="notification_drones_enhanced">Дроны усилены! Они манёвреннее.</string>
+    <string name="notification_boss_hyperjump">Босс вышел из гиперпрыжка!</string>
+    <string name="notification_ship_critical">Ваш корабль в критическом состоянии!</string>
+    <string name="notification_boss_weakened">Босс ослаб! Добейте его.</string>
+
+    <!-- Уровни -->
+    <string name="level_title_format" formatted="false">Уровень %1$d: %2$s</string>
+    <string name="level_objective_label">Цель</string>
+    <string name="level_name_unknown">Неизвестный уровень</string>
+    <string name="level_storyline_empty">Миссия без описания.</string>
+    <string name="level_name_1">Уровень 1</string>
+    <string name="level_name_2">Нептун: газовые гиганты</string>
+    <string name="level_name_3">Уровень 3</string>
+    <string name="level_name_4">Уровень 4</string>
+    <string name="level_name_5">Уровень 5</string>
+    <string name="level_name_6">Уровень 6</string>
+    <string name="level_name_7">Уровень 7</string>
+    <string name="level_name_8">Уровень 8</string>
+    <string name="level_name_9">Уровень 9</string>
+    <string name="level_name_10">Уровень 10</string>
+    <string name="level_name_11">Уровень 11</string>
+    <string name="level_name_12">Уровень 12</string>
+    <string name="level_name_13">Уровень 13</string>
+    <string name="level_name_14">Уровень 14</string>
+    <string name="level_name_15">Уровень 15</string>
+    <string name="level_name_16">Уровень 16</string>
+    <string name="level_name_17">Уровень 17</string>
+    <string name="level_name_18">Уровень 18</string>
+    <string name="level_name_19">Уровень 19</string>
+    <string name="level_name_20">Уровень 20</string>
+
+    <string name="level_storyline_1">Миссия без описания.</string>
+    <string name="level_storyline_2">Корабль человека перешёл на сторону врага. Остановите предателя и его флот. Сражайтесь с дронами до 3-й волны. Затем появится предатель (фиолетовый корабль), которого необходимо уничтожить.</string>
+    <string name="level_storyline_3">Миссия без описания.</string>
+    <string name="level_storyline_4">Миссия без описания.</string>
+    <string name="level_storyline_5">Миссия без описания.</string>
+    <string name="level_storyline_6">Миссия без описания.</string>
+    <string name="level_storyline_7">Миссия без описания.</string>
+    <string name="level_storyline_8">Миссия без описания.</string>
+    <string name="level_storyline_9">Миссия без описания.</string>
+    <string name="level_storyline_10">Миссия без описания.</string>
+    <string name="level_storyline_11">Миссия без описания.</string>
+    <string name="level_storyline_12">Миссия без описания.</string>
+    <string name="level_storyline_13">Миссия без описания.</string>
+    <string name="level_storyline_14">Миссия без описания.</string>
+    <string name="level_storyline_15">Миссия без описания.</string>
+    <string name="level_storyline_16">Миссия без описания.</string>
+    <string name="level_storyline_17">Миссия без описания.</string>
+    <string name="level_storyline_18">Миссия без описания.</string>
+    <string name="level_storyline_19">Миссия без описания.</string>
+    <string name="level_storyline_20">Миссия без описания.</string>
+
+    <string name="level_objective_1">Цель не указана.</string>
+    <string name="level_objective_2">Остановите флот и уничтожьте предателя после 3-й волны.</string>
+    <string name="level_objective_3">Цель не указана.</string>
+    <string name="level_objective_4">Цель не указана.</string>
+    <string name="level_objective_5">Цель не указана.</string>
+    <string name="level_objective_6">Цель не указана.</string>
+    <string name="level_objective_7">Цель не указана.</string>
+    <string name="level_objective_8">Цель не указана.</string>
+    <string name="level_objective_9">Цель не указана.</string>
+    <string name="level_objective_10">Цель не указана.</string>
+    <string name="level_objective_11">Цель не указана.</string>
+    <string name="level_objective_12">Цель не указана.</string>
+    <string name="level_objective_13">Цель не указана.</string>
+    <string name="level_objective_14">Цель не указана.</string>
+    <string name="level_objective_15">Цель не указана.</string>
+    <string name="level_objective_16">Цель не указана.</string>
+    <string name="level_objective_17">Цель не указана.</string>
+    <string name="level_objective_18">Цель не указана.</string>
+    <string name="level_objective_19">Цель не указана.</string>
+    <string name="level_objective_20">Цель не указана.</string>
+</resources>

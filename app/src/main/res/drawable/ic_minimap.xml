@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Большой круг (фон) -->
+    <path android:fillColor="#222222" android:pathData="M12,2a10,10 0 1,0 0,20a10,10 0 1,0 0,-20z"/>
+    <!-- Маленький круг (центр) -->
+    <path android:fillColor="#30D51A" android:pathData="M12,10a2,2 0 1,0 0,4a2,2 0 1,0 0,-4z"/>
+    <!-- Точка справа сверху -->
+    <path android:fillColor="#FFD700" android:pathData="M18,6.8a1.2,1.2 0 1,0 0,2.4a1.2,1.2 0 1,0 0,-2.4z"/>
+    <!-- Точка слева снизу -->
+    <path android:fillColor="#40C4FF" android:pathData="M7,14.8a1.2,1.2 0 1,0 0,2.4a1.2,1.2 0 1,0 0,-2.4z"/>
+</vector> 

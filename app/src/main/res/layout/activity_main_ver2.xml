@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_game_title"
+            android:textColor="#FBFBFB"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_version"
+            android:textColor="#FBFBFB"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="60dp" />
+
+        <Button
+            android:id="@+id/btnstart"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#30D51A"
+            android:text="@string/main_play"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnexit"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#025B53"
+            android:text="@string/main_exit"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

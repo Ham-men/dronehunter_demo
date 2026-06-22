@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Основание -->
+    <path android:fillColor="#757575" android:pathData="M6,20h12v2H6z"/>
+    <!-- Корпус -->
+    <path android:fillColor="#BDBDBD" android:pathData="M8,12h8v6H8z"/>
+    <!-- Ствол -->
+    <path android:fillColor="#616161" android:pathData="M11,6h2v8h-2z"/>
+    <!-- Дуло -->
+    <path android:fillColor="#FFB300" android:pathData="M11,4h2v2h-2z"/>
+</vector> 
